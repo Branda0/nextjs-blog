@@ -19,29 +19,12 @@ export async function getStaticProps() {
 export default function Home({ allPostsData }) {
   const [data, setData] = useState<number>();
 
-  const userMap = new Map<string, { id: number; status: string }>([
-    ["theo", { id: 7, status: "online" }],
-    ["lea", { id: 10, status: "offline" }],
-  ]);
-
-  const user = userMap.get("lea");
-  // console.log(userMap.get("theo"));
-  // console.log(user);
-  const array = [1, 2, 3];
-  // console.log(...userMap);
-  [...userMap].map((user) => console.log(user[0], user[1]));
   function multiply(params: number, multiplier: number) {
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve(params * multiplier);
       }, 3000);
     });
-
-    // setTimeout(() => {
-    //   console.log("server fetching");
-    //   return params * multiplier;
-    //   console.log("ok");
-    // }, 3000);
   }
 
   useEffect(() => {
